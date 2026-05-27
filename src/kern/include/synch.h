@@ -117,7 +117,6 @@ struct cv {
         char *cv_name;
         struct wchan *cv_wchan;
         struct spinlock cv_splock;
-        struct lock cv_lock;
 };      
 
 struct cv *cv_create(const char *name);
