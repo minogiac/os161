@@ -453,3 +453,5 @@ optfile syscall syscall/write.c
 
 defoption lock
 
+defoption waitpid
+

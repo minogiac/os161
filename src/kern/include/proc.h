@@ -37,6 +37,7 @@
  */
 
 #include <spinlock.h>
+#include <synch.h>
 
 struct addrspace;
 struct thread;
@@ -71,6 +72,10 @@ struct proc {
 	struct vnode *p_cwd;		/* current working directory */
 
 	/* add more material here as needed */
+	struct semaphore *p_sem;
+
+	int exit_code;
+
 };
 
 /* This is the process structure for the kernel and for kernel-only threads. */

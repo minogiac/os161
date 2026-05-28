@@ -82,6 +82,10 @@ proc_create(const char *name)
 	/* VFS fields */
 	proc->p_cwd = NULL;
 
+	proc->p_sem = sem_create(name, 0); //come possiamo vedere qui il numero che diamo al semaforo è 0 perché vogliamo che appena chiama P() il padre vada subito a dormire
+
+	proc->exit_code = 0;
+
 	return proc;
 }
 
@@ -317,4 +321,16 @@ proc_setas(struct addrspace *newas)
 	proc->p_addrspace = newas;
 	spinlock_release(&proc->p_lock);
 	return oldas;
+}
+
+int proc_wait(struct proc *p){
+
+	P(p->p_sem);
+	
+	int value = p->exit_code;
+
+	proc_destroy(p);
+
+	return value;
+
 }
