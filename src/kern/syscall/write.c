@@ -1,8 +1,12 @@
-#include "/home/os161user/os161/src/userland/include/types/size_t.h"
-#include "types.h"
-#include "/home/os161user/os161/src/userland/include/stdio.h"
+#include <types.h>
 #include <lib.h>
-#include "syscall.h"
+#include <kern/unistd.h>
+#include <clock.h>
+#include <copyinout.h>
+#include <syscall.h>      
+#include <proc.h>
+#include <thread.h>
+#include <addrspace.h>
 
 
 

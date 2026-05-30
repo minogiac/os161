@@ -27,6 +27,7 @@
  * SUCH DAMAGE.
  */
 
+#include <syscall.h>
 #include <types.h>
 #include <kern/errno.h>
 #include <kern/syscall.h>
@@ -34,7 +35,7 @@
 #include <mips/trapframe.h>
 #include <thread.h>
 #include <current.h>
-#include <syscall.h>
+
 
 
 /*
@@ -115,7 +116,8 @@ syscall(struct trapframe *tf)
 		err = read((int) tf->tf_a0, (userptr_t)tf->tf_a1, (size_t)tf->tf_a2);
 		break; 
 		case SYS__exit:
-		err = sys__exit((int)tf->tf_a0);
+		sys__exit((int)tf->tf_a0);
+		err=0;
 		break;
 
 

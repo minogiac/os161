@@ -1,9 +1,12 @@
-write.o: ../../syscall/write.c \
- /home/os161user/os161/src/userland/include/types/size_t.h \
+write.o: ../../syscall/write.c ../../include/types.h \
  ../../include/kern/types.h includelinks/kern/machine/types.h \
- ../../include/types.h includelinks/machine/types.h \
- /home/os161user/os161/src/userland/include/stdio.h \
- /home/os161user/os161/src/userland/include/types/size_t.h \
- /home/os161user/os161/src/userland/include/sys/null.h \
- ../../include/lib.h ../../include/cdefs.h opt-noasserts.h \
- ../../include/syscall.h ../../include/types.h
+ includelinks/machine/types.h ../../include/lib.h ../../include/cdefs.h \
+ opt-noasserts.h ../../include/kern/unistd.h ../../include/clock.h \
+ ../../include/kern/time.h ../../include/copyinout.h \
+ ../../include/syscall.h ../../include/types.h ../../include/proc.h \
+ ../../include/spinlock.h ../../include/hangman.h opt-hangman.h \
+ includelinks/machine/spinlock.h ../../include/synch.h \
+ ../../include/thread.h ../../include/array.h ../../include/threadlist.h \
+ includelinks/machine/thread.h ../../include/setjmp.h \
+ includelinks/kern/machine/setjmp.h ../../include/addrspace.h \
+ ../../include/vm.h includelinks/machine/vm.h opt-dumbvm.h

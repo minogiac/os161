@@ -90,6 +90,9 @@ struct proc *proc_create_runprogram(const char *name);
 /* Destroy a process. */
 void proc_destroy(struct proc *proc);
 
+//la mia proc wait
+int proc_wait(struct proc *p);
+
 /* Attach a thread to a process. Must not already have a process. */
 int proc_addthread(struct proc *proc, struct thread *t);
 
